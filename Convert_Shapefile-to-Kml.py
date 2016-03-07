@@ -6,7 +6,7 @@ import os
 workspace = "C:\\data\\shapefile"
 
 # Setting out path file
-out_file = ""
+out_file = "C:\\data\\out"
 
 # Setting Coordinate Reference System WGS84
 reference_system = QgsCoordinateReferenceSystem(4326)
@@ -14,7 +14,7 @@ reference_system = QgsCoordinateReferenceSystem(4326)
 # Try convert shapefile to kml
 try:
 
-    # for each shapefile in workspace
+    # For each shapefile in workspace
     for row in os.listdir(workspace):
 
         # Find the geometry file 
@@ -27,10 +27,10 @@ try:
             # Create a new temporary layer
             vector_lyr = QgsVectorLayer(workspace + "\\" + row, row[:markup], "ogr")
 
-            print "Converting Shapefile to Kml"
             # Convert the layer to kml file
+            print "Converting Shapefile to Kml"
             QgsVectorFileWriter.writeAsVectorFormat(vector_lyr, out_file + '\\' + kml_name, "utf-8", reference_system, "KML")
-
+            
             print "Success!"
 except:
     print "It was not possible to convert shapefile to kml"
