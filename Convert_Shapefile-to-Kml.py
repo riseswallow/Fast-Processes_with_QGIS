@@ -1,6 +1,8 @@
-#
 #------------------CONVERT SHAPEFILE TO KML -------------------
 import os
+
+from qgis.core import QgsCoordinateReferenceSystem, QgsVectorLayer
+from QgsVectorFileWriter import writeAsVectorFormat
 
 # Setting workspace
 workspace = "C:\\data\\shapefile"
@@ -29,7 +31,7 @@ try:
 
             # Convert the layer to kml file
             print "Converting Shapefile to Kml"
-            QgsVectorFileWriter.writeAsVectorFormat(vector_lyr, out_file + '\\' + kml_name, "utf-8", reference_system, "KML")
+            writeAsVectorFormat(vector_lyr, out_file + '\\' + kml_name, "utf-8", reference_system, "KML")
             
             print "Success!"
 except:
