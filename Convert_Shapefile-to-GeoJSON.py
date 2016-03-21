@@ -23,7 +23,7 @@ try:
         if row[-4:] == '.shp':
             #Get the name file
             markup = row.find(".")
-            kml_name = row[:markup] + ".geojson"
+            geoJson_name = row[:markup] + ".geojson"
 
             # Create a new temporary layer
             vector_lyr = QgsVectorLayer(workspace + "\\" + row, row[:markup], "ogr")
@@ -32,7 +32,7 @@ try:
 
             # Convert the layer to kml file
             print "Converting Shapefile to GeoJSON"
-            QgsVectorFileWriter.writeAsVectorFormat(vector_lyr, out_file + '\\' + kml_name, "latin1", reference_system, "GEOJSON")
+            QgsVectorFileWriter.writeAsVectorFormat(vector_lyr, out_file + '\\' + geoJson_name, "latin1", reference_system, "GEOJSON")
 
             print "Success!"
 except:
