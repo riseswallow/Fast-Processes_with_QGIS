@@ -21,7 +21,8 @@ try:
 
         # Find the geometry file
         if row[-4:] == '.shp':
-            #Get the name file
+            
+            # Get the name file
             markup = row.find(".")
             geoJson_name = row[:markup] + ".geojson"
 
@@ -30,7 +31,7 @@ try:
             vector_lyr .setProviderEncoding(u'latin1')
             vector_lyr .dataProvider().setEncoding(u'latin1')
 
-            # Convert the layer to kml file
+            # Convert the layer to GeoJSON file
             print "Converting Shapefile to GeoJSON"
             QgsVectorFileWriter.writeAsVectorFormat(vector_lyr, out_file + '\\' + geoJson_name, "latin1", reference_system, "GEOJSON")
 
