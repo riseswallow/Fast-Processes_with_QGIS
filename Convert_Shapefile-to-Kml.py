@@ -14,7 +14,8 @@ reference_system = QgsCoordinateReferenceSystem(4326)
 
 # Try convert shapefile to kml
 try:
-        # For each shapefile in workspace
+
+# For each shapefile in workspace
 for row in os.listdir(workspace):
 
     # Find the geometry file
