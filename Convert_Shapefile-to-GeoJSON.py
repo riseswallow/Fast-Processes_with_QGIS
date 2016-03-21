@@ -13,7 +13,7 @@ out_file = "C:\\data\\out"
 # Setting Coordinate Reference System WGS84
 reference_system = QgsCoordinateReferenceSystem(4326)
 
-# Try convert shapefile to kml
+# Try convert shapefile to GeoJSON
 try:
 
     # For each shapefile in workspace
