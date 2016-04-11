@@ -25,7 +25,7 @@ try:
 
 	    # Get the name new file
             markup = row.find(".")
-            newFileName = str(workspace) "\\" + row[:markup] + "_singlePart.shp"
+            newFileName = str(workspace) + "\\" + row[:markup] + "_singlePart.shp"
 
             # Convert the layer to kml file
             print "Converting multipart to singleparts"
