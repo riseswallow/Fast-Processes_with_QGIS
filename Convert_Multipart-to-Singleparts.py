@@ -13,8 +13,8 @@ processing.alglist("Multipart to singleparts")
 workspace = "C:\\data"
 
 try:
+	
     # For each shapefile in workspace
-
     for row in os.listdir(workspace):
 
         # Find the geometry file
