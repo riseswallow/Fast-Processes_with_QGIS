@@ -31,7 +31,7 @@ try:
             vector_lyr .setProviderEncoding(u'latin1')
             vector_lyr .dataProvider().setEncoding(u'latin1')
 
-            # Convert the layer to GeoJSON file
+            # Convert the layer to CSV file
             print "Converting Shapefile to CSV"
             QgsVectorFileWriter.writeAsVectorFormat(vector_lyr, out_file + '\\' + csv_name, "latin1", reference_system, "CSV")
 
