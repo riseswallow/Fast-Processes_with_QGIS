@@ -28,9 +28,12 @@ try:
 
             # Create a new temporary layer
             vector_lyr = QgsVectorLayer(workspace + "\\" + row, row[:markup], "ogr")
-            vector_lyr .setProviderEncoding(u'latin1')
-            vector_lyr .dataProvider().setEncoding(u'latin1')
-
+            #vector_lyr .setProviderEncoding(u'latin1')
+            #vector_lyr .dataProvider().setEncoding(u'latin1')
+            
+            # Delete Vector Layear
+            QgsMapLayerRegistry.instance().removeMapLayer( vector_lyr.id() )
+            
             # Convert the layer to CSV file
             print "Converting Shapefile to CSV"
             QgsVectorFileWriter.writeAsVectorFormat(vector_lyr, out_file + '\\' + csv_name, "latin1", reference_system, "CSV")
